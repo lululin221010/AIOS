@@ -3,7 +3,7 @@
 > 這不是 README，是 AIOS 的入口。
 > 任何 AI（CEO本人／ChatGPT／Claude Code／未來 Codex／其他 AI）開始工作前，先讀這份索引，依任務性質找到對應資料夾，不要自行在資料夾裡翻找。
 
-最後更新：2026-07-02
+最後更新：2026-07-03
 
 ---
 
@@ -27,9 +27,17 @@
 | [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 僅 README，內容未建立 |
 | [05_Knowledge](05_Knowledge/README.md) | 名詞定義、代號表、參考資料 | 僅 README，內容未建立 |
 | [06_Operations](06_Operations/README.md) | 跨站共用 SOP | 僅 README，內容未建立 |
-| [07_Projects](07_Projects/README.md) | 任務儀表板、停車場 | 僅 README，內容未建立 |
+| [07_Projects](07_Projects/README.md) | 任務儀表板、停車場 | 含 1 個子專案（Platform Transformation） |
 | [08_Daily](08_Daily/README.md) | 每日工作記錄 | 僅 README，內容未建立 |
 | [09_Archive](09_Archive/README.md) | 被取代的舊版文件歸檔 | 僅 README，內容未建立 |
+
+---
+
+## 07_Projects 子專案
+
+| 子專案 | 文件 | Owner | Maintainer |
+|---|---|---|---|
+| [Platform Transformation](07_Projects/Platform_Transformation/README.md) | [Project Overview](07_Projects/Platform_Transformation/Project_Overview.md)／[Roadmap](07_Projects/Platform_Transformation/Roadmap.md)／[Decision Log](07_Projects/Platform_Transformation/Decision_Log.md)／[Tasks](07_Projects/Platform_Transformation/Tasks.md) | CEO | CTO |
 
 ---
 
