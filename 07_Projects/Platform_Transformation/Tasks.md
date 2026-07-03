@@ -15,9 +15,15 @@
 3. **AIOS 資料夾架構版本對齊**：這次 ChatGPT 對話中提的 AIOS 結構（`01_公司章程.md`／`02_組織架構.md`／`SOP/`／`CEO/`／`Assets/` 平面檔案）跟 CC 實際已建立的 AIOS 骨架（`00_Foundation` ~ `09_Archive` 編號資料夾）不是同一版。需要讓 ChatGPT 知道實際版本是哪個，避免兩邊各自以為架構不同，之後對不上。
 
 ## In Progress
-4. **ST 電子書交付模式改回線上閱讀＋系列升級制**（2026-07-03 妹已拍板，見 Decision_Log）：需要規劃「重組系列包裝＋升級制度」的實際商品/權限結構，並確認 `/read[token]` 閱讀器要補強哪些功能才能撐起這個交付模式。此項需要妹跟 ChatGPT 對齊「系列包裝升級制度」的具體規則後，CC 才能動工 MongoDB/API 變更。
+4. **技術實作準備（規則已定案，尚未動工）**：
+   - 91 筆現有商品需要補上 `contentType` 欄位（`bundle` / `course_only` / `ebook_only`）
+   - 結帳流程需要新增「同 contentType 累計件數」折扣計算邏輯（2件9折/4件85折/6件以上8折，跨書院可累計、跨 contentType 不可累計）
+   - 心理學 28 本現有的專屬系列定價要移除，改吃通用折扣規則
+   - `/read/[token]` 閱讀器要確認是否需要補強功能以撐起「線上閱讀為主」的交付模式
+   - **這些都是動 MongoDB schema／checkout API／既有商品資料的異動，屬於 CLAUDE.md「大改前必須先給原始檔」的範圍，妹要動工前先告訴 CC，CC 才會去要現有的 digitalProducts／checkout 相關檔案，不會憑印象改**
 
 ## Done
 - ETF 完全解案重複舊草稿已刪除（2026-07-02 前完成）
 - 91 筆商品 Book/Series/Academy schema 映射已完成（ST repo `docs/內容資產重整-Schema與映射-20260702.md`）
-- 電子書交付模式方向已拍板：線上閱讀為主，閱讀器不廢棄，不做手動寄送（2026-07-03，見 Decision_Log）——**方向定案，執行細節待展開，故同時列在 In Progress**
+- 電子書交付模式方向已拍板：線上閱讀為主，閱讀器不廢棄，不做手動寄送（2026-07-03，見 Decision_Log）
+- 商品折扣機制定案：放棄 GPT 分層升級制，改用「同 contentType 數量折扣」（2/4/6件對應9折/85折/8折），心理學專屬系列定價正式廢除（2026-07-03，見 Decision_Log）
