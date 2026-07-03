@@ -37,6 +37,22 @@ Decision：尋寶樂園（規劃新品／二手物品／未來廣告商）現階
 Why：妹明確表態「沒心力管到這裡，不是現在想做的」，非技術限制，是主動選擇優先順序。
 Owner：妹
 
+## 2026-07-03｜平台三層架構：Marketing / Product / Membership
+Decision：整個平台拆成三層，只有 Product 層適用下面的三分類（bundle/course_only/ebook_only）：
+- **Marketing**：免費測驗、文章、SEO、活動——不是 Product，不進三分類 schema，純粹是 SS 的導流入口
+- **Product**：ebook、course、bundle——適用三分類
+- **Membership**：訂閱、書院、SD——另一套邏輯，不套用三分類
+Why：避免把「免費導流頁」跟「付費商品」混在同一個 schema 裡，兩者的技術需求（是否要解鎖權限、是否要進訂單系統）完全不同。
+Owner：妹 / ChatGPT / CC 三方一致同意
+
+## 2026-07-03｜Series ContentType 三分類定案
+Decision：Product 層的商品內容型態固定為三種，不再新增第四種：
+- `bundle`：課程 + 電子書（現有：AI書院、股市書院、心理學書院、自律神經）
+- `course_only`：僅課程／測驗／互動內容（付費、需要解鎖權限的才算）
+- `ebook_only`：僅電子書（現有：舊書5本等敘事/工具書）
+Why：三種型態對應目前實際存在的三種內容特徵，命名反映內容型態而非網站前台分類。
+Owner：妹 / ChatGPT / CC 三方一致同意
+
 ## 2026-07-03｜電子書交付模式：改回線上閱讀為主，閱讀器不廢棄
 Decision：電子書購買後開放帳號權限（線上閱讀＋解鎖），採用 Book/Series/Academy 重組後的系列包裝＋升級制度（試讀→入門→進階→高階），不做手動寄送 EPUB 檔案。`/read/[token]` 閱讀器繼續維護，不廢棄。
 Why：妹確認要走 ChatGPT 建議的「線上閱讀為主」方向，取代 2026-06-18「放棄線上閱讀器、改回手動 Email 寄送」的舊決定。
