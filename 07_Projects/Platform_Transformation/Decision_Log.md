@@ -69,3 +69,8 @@ Decision：電子書購買後開放帳號權限（線上閱讀＋解鎖），採
 Why：妹確認要走 ChatGPT 建議的「線上閱讀為主」方向，取代 2026-06-18「放棄線上閱讀器、改回手動 Email 寄送」的舊決定。
 **⚠️ 取代關係**：本決策正式取代 2026-06-18 決定；2026-06-28「EPUB 下載＋SS 書院課程解鎖，不拆賣」的商品綁定原則不變，但「下載」不再等於「手動 Email 寄送檔案」，而是「線上閱讀帳號權限」。EPUB 下載可留作備援選項，非主要交付方式。
 Owner：妹
+
+## 2026-07-06｜ST 商城 Phase 4：Completed & Frozen（Order Persistence + Payment + Hardening）
+Decision：ST repo（`my-bookstore-next-V2`）商業規則規格書 v1.0 的 Phase 4（Order Persistence & Payment）正式完成並封存，不再回頭修改。範圍：`PurchaseOrder`/`PaymentTransaction` model、`OrderRepository`、`PaymentAdapter` 抽象介面（`manual_transfer` + `mock` 兩個實作）、`PaymentService`（Transaction Flow + Idempotency）、`GrantService`（實際寫入 `UserPurchase`）、`POST /api/checkout`、`POST /api/payment/callback`。完成後先做一輪多角度 code review 才驗收，抓到 Critical 安全漏洞（callback 零認證 + client 可自選測試用 `mock` provider，兩者疊加可免費觸發真實商品授權），已在 Phase 4.1 Hardening 修復（admin session 認證、paymentMethod 白名單、idempotency retry 修復、transactionId-based CAS）。64 個單元測試全過，經第二輪 adversarial verification 確認修復無誤、無新增 regression。下一步進入 Phase 5（Checkout UI / 我的訂單 / 我的電子書 / 付款成功頁 / 付款失敗頁等使用者可見功能），Phase 1～4 程式碼不再回頭重新設計。
+Why：確立「每個 Phase 有明確邊界，完成並通過 review 後就封存，不做無止盡的 Hardening/Refactor」的開發節奏，避免陷入 Low → 更 Low → Style → Refactor → Architecture 的無限迴圈。詳細技術記錄見 ST repo Claude Code 記憶檔 `project_commerce_rules_v1_phase4_20260706.md`。
+Owner：妹 / CC
