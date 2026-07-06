@@ -5,6 +5,8 @@
 
 最後更新：2026-07-06
 
+**🔴 必讀**：[Content Factory 願景](01_Company/Content_Factory_Vision.md) — 公司整體營運模式定案（2026-07-06）：不是經營一個商城網站，是經營一間內容工廠，ST/SS/SD只是出口之一。任何AI開始規劃新工作前，先讀這份，理解「內容資產矩陣」「六條生產線」「龍蝦AI角色分工」的整體脈絡，再進對應資料夾/專案處理細節。
+
 ---
 
 ## 根目錄文件
@@ -21,7 +23,7 @@
 | 資料夾 | Purpose | 現況 |
 |---|---|---|
 | [00_Foundation](00_Foundation/README.md) | 公司章程、AIOS 使用規則、核心原則 | 僅 README，內容未建立 |
-| [01_Company](01_Company/README.md) | 組織架構、AI 角色分工 | 僅 README，內容未建立 |
+| [01_Company](01_Company/README.md) | 組織架構、AI 角色分工 | 含 [Content Factory 願景](01_Company/Content_Factory_Vision.md) |
 | [02_Assets](02_Assets/README.md) | 公司資產總覽（書院／系列／書、IP 設定） | 僅 README，內容未建立 |
 | [03_Products](03_Products/README.md) | ST／SS／SD 產品定位與策略 | 僅 README，內容未建立 |
 | [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 含 [AIOS Git Root 稽核報告](04_Systems/AIOS_git_root_audit.md)（已解決） |
