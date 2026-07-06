@@ -31,6 +31,17 @@
    - ⑤ Reader 串接：把「付款成功 → Grant → My Library → Reader」整條線串起來（`/read/[token]` 閱讀器已有基礎，這階段只差串接）
    - **明確不做**：Coupon、Wallet、Membership、Promotion、多幣別、Tax、發票、點數、推薦碼——這些都是功能擴充，不是完成一條完整購買流程的必要條件，等 Phase 5 跑通再考慮
    - 前置狀態：ST 商城 Phase 1~4（Commerce Model / Pricing Engine / Checkout Pipeline / Payment + Hardening）已於 2026-07-06 正式封存（見 Decision_Log），Phase 5 建立在這些既有 API 之上，不重新設計 Phase 1~4
+   - **Definition of Done（2026-07-06 妹補充，全部打勾才算Phase5完成，不可做到一半又擴充功能）**：
+     - [ ] 使用者可以登入
+     - [ ] 可以加入購物車
+     - [ ] 可以完成 Checkout
+     - [ ] 可以完成付款
+     - [ ] Callback 成功
+     - [ ] Grant 建立
+     - [ ] 我的訂單看得到
+     - [ ] 我的電子書看得到
+     - [ ] Reader 可以正常閱讀
+     - [ ] 全流程人工測試通過
 
 ## Done
 - ETF 完全解案重複舊草稿已刪除（2026-07-02 前完成）
