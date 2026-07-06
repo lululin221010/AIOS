@@ -3,7 +3,7 @@
 > 這不是 README，是 AIOS 的入口。
 > 任何 AI（CEO本人／ChatGPT／Claude Code／未來 Codex／其他 AI）開始工作前，先讀這份索引，依任務性質找到對應資料夾，不要自行在資料夾裡翻找。
 
-最後更新：2026-07-03
+最後更新：2026-07-06
 
 ---
 
@@ -24,7 +24,7 @@
 | [01_Company](01_Company/README.md) | 組織架構、AI 角色分工 | 僅 README，內容未建立 |
 | [02_Assets](02_Assets/README.md) | 公司資產總覽（書院／系列／書、IP 設定） | 僅 README，內容未建立 |
 | [03_Products](03_Products/README.md) | ST／SS／SD 產品定位與策略 | 僅 README，內容未建立 |
-| [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 僅 README，內容未建立 |
+| [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 含 [AIOS Git Root 稽核報告](04_Systems/AIOS_git_root_audit.md)（已解決） |
 | [05_Knowledge](05_Knowledge/README.md) | 名詞定義、代號表、參考資料 | 僅 README，內容未建立 |
 | [06_Operations](06_Operations/README.md) | 跨站共用 SOP | 僅 README，內容未建立 |
 | [07_Projects](07_Projects/README.md) | 任務儀表板、停車場 | 含 1 個子專案（Platform Transformation） |
@@ -50,7 +50,6 @@
 | 書院架構總表 v7 | `G:\我的雲端硬碟\總策畫\academy-master-plan-v7_lulu_20260629.html` | 02_Assets / 03_Products |
 | 內容資產重整 Schema 與映射 | ST repo `docs/內容資產重整-Schema與映射-20260702.md` | 02_Assets |
 | 內容資產重整 v1.1 一致性稽核 | ST repo `docs/內容資產重整-v1.1-一致性稽核-20260702.md` + `docs/data/*.csv` `*.json` | 02_Assets |
-| AIOS Git Root 稽核報告 | ST repo `docs/AIOS_git_root_audit.md` | 04_Systems |
 | 電子書上架全流程 SOP | ST repo `docs/電子書上架全流程SOP.md` | 06_Operations |
 
 ---
