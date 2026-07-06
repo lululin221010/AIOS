@@ -31,6 +31,10 @@
    - ⑤ Reader 串接：把「付款成功 → Grant → My Library → Reader」整條線串起來（`/read/[token]` 閱讀器已有基礎，這階段只差串接）
    - **明確不做**：Coupon、Wallet、Membership、Promotion、多幣別、Tax、發票、點數、推薦碼——這些都是功能擴充，不是完成一條完整購買流程的必要條件，等 Phase 5 跑通再考慮
    - 前置狀態：ST 商城 Phase 1~4（Commerce Model / Pricing Engine / Checkout Pipeline / Payment + Hardening）已於 2026-07-06 正式封存（見 Decision_Log），Phase 5 建立在這些既有 API 之上，不重新設計 Phase 1~4
+   - **Prerequisites（2026-07-06 妹拍板，開始使用者功能驗收前必須先完成，但不算進下面的DoD——這是架構整合/實作方式，不是使用者可見成果，DoD要保持只用使用者角度驗收，避免之後把Repository重構/Cache/Event Bus這類技術細節也塞進DoD而失焦）**：
+     1. `Content.productStatus` 成為商品顯示的唯一真實來源（Single Source of Truth），前台移除對舊欄位 `DigitalProduct.isPublished`/`comingSoon` 的依賴（目前這兩套「上架狀態」並存且沒同步——Content標`course`/`published`，前台商城可能因為`DigitalProduct.comingSoon=true`還是看不到，這是Phase1完成當天就發現、明確記錄的技術債，見 `project_commerce_rules_v1_phase1_20260706.md`）
+     2. 建立 Content 的商品型態勾選 UI（建立時勾選 ebook/course/audiobook/... 即產生對應的 `productStatus` 項目，狀態預設 `planned`）
+     3. 補齊 `ProductType` 主檔資料（目前只種 ebook/course/audiobook 3 筆，補上畫冊/模板/Podcast/AI工具/其他等，純資料非架構調整）
    - **Definition of Done（2026-07-06 妹補充，全部打勾才算Phase5完成，不可做到一半又擴充功能）**：
      - [ ] 使用者可以登入
      - [ ] 可以加入購物車
