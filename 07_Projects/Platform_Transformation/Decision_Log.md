@@ -74,3 +74,35 @@ Owner：妹
 Decision：ST repo（`my-bookstore-next-V2`）商業規則規格書 v1.0 的 Phase 4（Order Persistence & Payment）正式完成並封存，不再回頭修改。範圍：`PurchaseOrder`/`PaymentTransaction` model、`OrderRepository`、`PaymentAdapter` 抽象介面（`manual_transfer` + `mock` 兩個實作）、`PaymentService`（Transaction Flow + Idempotency）、`GrantService`（實際寫入 `UserPurchase`）、`POST /api/checkout`、`POST /api/payment/callback`。完成後先做一輪多角度 code review 才驗收，抓到 Critical 安全漏洞（callback 零認證 + client 可自選測試用 `mock` provider，兩者疊加可免費觸發真實商品授權），已在 Phase 4.1 Hardening 修復（admin session 認證、paymentMethod 白名單、idempotency retry 修復、transactionId-based CAS）。64 個單元測試全過，經第二輪 adversarial verification 確認修復無誤、無新增 regression。下一步進入 Phase 5（Checkout UI / 我的訂單 / 我的電子書 / 付款成功頁 / 付款失敗頁等使用者可見功能），Phase 1～4 程式碼不再回頭重新設計。
 Why：確立「每個 Phase 有明確邊界，完成並通過 review 後就封存，不做無止盡的 Hardening/Refactor」的開發節奏，避免陷入 Low → 更 Low → Style → Refactor → Architecture 的無限迴圈。詳細技術記錄見 ST repo Claude Code 記憶檔 `project_commerce_rules_v1_phase4_20260706.md`。
 Owner：妹 / CC
+
+## 2026-07-07｜stilltimecorner.com 網域正式啟用
+Decision：ST 站自訂網域 stilltimecorner.com（Cloudflare 購買+代管 DNS）已完成串接 Vercel，DNS/SSL 皆已生效。apex 網域為主，www 導向 apex。
+Why：ST 站正式對外身分升級，脫離 still-time-corner.vercel.app 子網域，為後續社群推廣做準備。
+Owner：妹 / CC
+
+## 2026-07-07｜ST 商城 Phase5：第一個真實商品（理財調查局）走完新結帳系統
+Decision：Phase1-4 建好的新結帳 pipeline（CheckoutService/PaymentService/GrantService）首次真正接上前端，讓「理財調查局：ETF完全解案」成為第一個用新系統銷售的商品。同時修復 `/api/my-purchases` 與 `/api/read-epub` 對舊系統(DigitalOrder)/新系統(PurchaseOrder)的 cross-check 落差——這是讓新系統購買後能真正被讀到的關鍵修復。
+Why：驗證整條新 pipeline（結帳→付款確認→發放權限→線上閱讀）能否在真實商品上跑通，作為後續全站商品遷移的第一個切片。
+Owner：妹 / CC
+
+## 2026-07-07｜取消電子書全系列訂閱制（SD 收租AI訂閱不受影響）
+Decision：下架「電子書全系列3個月/半年/1年訂閱」3個商品，只保留單本買斷制。SD（收租AI）月訂/年訂維持不動，是完全獨立的商品線。
+Why：只有家人在測試，沒有真實訂閱戶，訂閱制的工程複雜度（時效追蹤、續約提醒）換不到實際商業效益，拿掉後也讓全站商品遷移新結帳系統的範圍變乾淨。
+Owner：妹
+
+## 2026-07-07｜多品項購物車 + 電子書/課程組合購買 + 數量折扣，正式接上新結帳系統前端
+Decision：新結帳系統（`/checkout-v2`）從單品購買升級為購物車模式；商品頁若有同內容（`contentId`相同）的課程存在，可選擇「只要電子書」或「電子書+課程組合」一起加入購物車，折扣由既有 Pricing Engine（`UpgradeRule` 同內容升級價 + `DiscountRule` 數量折扣）在結帳時自動計算，不需要另外開發定價邏輯。
+
+⚠️ **發現跟本文件 2026-07-03「商品折扣機制定案」的數字不一致**：當時決策寫「2件9折、4件85折、6件以上8折」，但實際已上線的 `DiscountRule` 種子資料（`scripts/phase2-seed-discount-rules.mjs`）是「2-3件95折、4-5件9折、6件以上85折」。這個落差需要妹確認：是2026-07-03之後另外調整過折扣力度沒有回來更新這份記錄，還是實作本身跟決策沒對齊，需要挑一邊修正。
+Why：全站商品分批遷移新結帳系統前，購物車/組合購買/折扣提示這三個前端功能要先到位。
+Owner：妹 / CC
+
+## 2026-07-07｜新結帳系統補上 SS 課程解鎖碼發放，AI書院系列1/2 解除遷移限制
+Decision：`GrantService` 新增邏輯：購買商品若設定 `ssUnlockTarget`/`unlockTarget`，確認付款時自動產生 `SS-XXXX-XXXX` 解鎖碼；`/api/verify-unlock` 同時認得舊系統(DigitalOrder)與新系統(PurchaseOrder)產生的解鎖碼。AI書院系列1、2（共6本）確認可以安全遷移到新結帳系統。
+Why：先前新結帳系統缺少 SS 解鎖碼發放能力，是 AI書院商品無法遷移的唯一技術阻礙，補上後解除限制。
+Owner：妹 / CC
+
+## 2026-07-07｜AI書院系列3遷移卡在SS repo缺付費書院頁；系列4~9內容其實已就緒（修正先前認知）
+Decision：AI書院系列3（Prompt/AI Agent/AI記憶）的SS課程內容已寫好，但目前只有完全不鎖的「試讀頁」（跟系列2~9共用`AiTrialPage.tsx`元件），沒有像系列1/2一樣的付費解鎖書院頁，需要在SS repo新建獨立頁面才能遷移，這次未執行。另外妹確認AI書院系列4~9的電子書MD/部分epub、課程MD其實都已經寫好在Google Drive（`驚喜樂世界\驚喜學院\AI書院\`），並非先前記錄的「s4~s9共17冊還沒轉epub」——是內容已產出但還沒建置上架，不是內容還沒寫。這塊建置工作妹傾向另開新對話處理。
+Why：釐清AI書院系列3~9的真實現況，避免下次接手時基於過時假設重工。
+Owner：妹 / CC
