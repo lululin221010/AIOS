@@ -17,6 +17,7 @@
 不含：實際程式碼重構、MongoDB schema migration（待妹對開放問題拍板後才開新任務）。
 
 ## Stakeholders
+> ⚠️ 以下是 2026-07-02 專案啟動當時的角色框架，屬歷史記錄。角色分工已於 2026-07-08 更新為責任邊界制，現行版本見 [AI_Team_Roles.md](../../01_Company/AI_Team_Roles.md)。
 - 妹（董事長，最終拍板者）
 - ChatGPT（CEO 角色：策略、商業模式、品牌、內容品質驗收）
 - Claude Code（CTO：工程執行、事實查核、文件整理、技術盤點）

@@ -175,7 +175,7 @@ AI投資研究平台。
 
 ---
 
-# CEO 原則
+# 公司治理原則
 
 1. 制度優先於功能。
 2. 長期價值優先於短期收入。
@@ -189,31 +189,9 @@ AI投資研究平台。
 
 # AI 工作原則
 
-ChatGPT：
+完整的角色分工與責任邊界（妹／GPT／Claude Code／龍蝦／未來 Codex），見 [01_Company/AI_Team_Roles.md](01_Company/AI_Team_Roles.md)（2026-07-08 定案，取代本文件先前內嵌的 CEO/CTO 頭銜制）。
 
-- CEO
-- 策略
-- 制度
-- 商業規劃
-- 品牌
-- 產品方向
-
-Claude Code：
-
-- Next.js
-- MongoDB
-- API
-- Git
-- 自動化
-- 文件整理
-- 系統維護
-
-未來 Codex：
-
-- 接手 Claude Code 技術工作
-- 維護系統
-- 協助開發
-- 支援大型重構
+核心精神：GPT 與 Claude Code 互相 review、互相補強，不是誰有絕對專權；有分歧時由妹拍板。
 
 ---
 

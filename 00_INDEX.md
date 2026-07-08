@@ -23,7 +23,7 @@
 | 資料夾 | Purpose | 現況 |
 |---|---|---|
 | [00_Foundation](00_Foundation/README.md) | 公司章程、AIOS 使用規則、核心原則 | 僅 README，內容未建立 |
-| [01_Company](01_Company/README.md) | 組織架構、AI 角色分工 | 含 [Content Factory 願景](01_Company/Content_Factory_Vision.md) |
+| [01_Company](01_Company/README.md) | 組織架構、AI 角色分工 | 含 [AI 團隊角色分工](01_Company/AI_Team_Roles.md)（正式版，2026-07-08取代CEO/CTO框架）／[Content Factory 願景](01_Company/Content_Factory_Vision.md) |
 | [02_Assets](02_Assets/README.md) | 公司資產總覽（書院／系列／書、IP 設定） | 僅 README，內容未建立 |
 | [03_Products](03_Products/README.md) | ST／SS／SD 產品定位與策略 | 僅 README，內容未建立 |
 | [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 含 [AIOS Git Root 稽核報告](04_Systems/AIOS_git_root_audit.md)（已解決） |
@@ -39,7 +39,7 @@
 
 | 子專案 | 文件 | Owner | Maintainer |
 |---|---|---|---|
-| [Platform Transformation](07_Projects/Platform_Transformation/README.md) | [Project Overview](07_Projects/Platform_Transformation/Project_Overview.md)／[Roadmap](07_Projects/Platform_Transformation/Roadmap.md)／[Decision Log](07_Projects/Platform_Transformation/Decision_Log.md)／[Tasks](07_Projects/Platform_Transformation/Tasks.md) | CEO | CTO |
+| [Platform Transformation](07_Projects/Platform_Transformation/README.md) | [Project Overview](07_Projects/Platform_Transformation/Project_Overview.md)／[Roadmap](07_Projects/Platform_Transformation/Roadmap.md)／[Decision Log](07_Projects/Platform_Transformation/Decision_Log.md)／[Tasks](07_Projects/Platform_Transformation/Tasks.md) | 妹 | CC |
 
 ---
 
