@@ -70,6 +70,13 @@
 |---|---|---|
 | AI_AGENT_SAFETY.md | ST repo `docs/AI_AGENT_SAFETY.md` | AI Agent 權限、Stage 1~3 信任階段、正式資產修改前必須妹當次同意的規則 |
 
+## 訂單/客服/營運
+| SOP | 位置 | 用途 |
+|---|---|---|
+| 訂單異常與轉帳核對SOP.md | ST repo `docs/訂單異常與轉帳核對SOP.md` | 三套訂單系統（Order.js／DigitalOrder.js／PurchaseOrder）各自的轉帳核對流程、逾期未付款/金額對不上/重複下單/誤按確認四類異常情境處理規則，2026-08-04建立，唯一權威版。系統完全不做金額自動比對，全靠人工核對，文末附已知系統缺口清單 |
+
+> ⚠️ 客服/客訴處理流程、資料備份/災難復原SOP尚未撰寫，是SOP優先順序第一級的下兩項待辦，見ST repo memory `project_next_sop_priority_queue_20260804`
+
 ---
 
 ## 各專案本地索引（僅限該資料夾範圍的SOP，往這裡查）
