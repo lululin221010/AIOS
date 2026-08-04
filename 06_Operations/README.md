@@ -35,13 +35,22 @@
 | 各平台Playbook | `有的沒的小舖\推廣\平台\06_Playbook\`（Facebook／Instagram／Threads／TikTok） | 各平台玩法與操作心法 |
 
 ## 課程
-> ⚠️ **完整的「互動課程製作SOP」目前不存在**（2026-08-04盤點確認）。現有的相關文件都只涵蓋局部：
-- SS repo `docs/mission-writing-rules.md` — Mission 互動內容動筆前的場景/玩家問題設計規則
-- SS repo `docs/mission-engine-schema.md` — Mission Engine 資料格式規範
-- `有的沒的小舖\驚喜樂世界\驚喜學院\AI書院\課程\`底下多份「給Codex」交辦指令 — 個別任務指令，非通用SOP
+| SOP | 位置 | 用途 |
+|---|---|---|
+| **課程製作SOP.md** | [06_Operations/課程製作SOP.md](課程製作SOP.md) | **完整流程權威版**（2026-08-04整合建立）：企劃質量關卡→C自我檢查(單堂4項/整本5項)→測驗品質雙項檢查→Codex批次交派方法論→技術上架注意事項→機械檢查→上架後維護，適用股市/心理學/AI書院/理財調查局/自律神經等所有系列 |
+| 內容母版MD規範.md | [06_Operations/內容母版MD規範.md](內容母版MD規範.md) | 一份MD內容源同時供EPUB(ST)／互動課程(SS)／有聲書／短影音／知識卡使用的格式規則，只管內容源格式，是課程製作SOP的補充 |
+| Content_Quality_Checklist.md | [05_Knowledge/Content_Quality_Checklist.md](../05_Knowledge/Content_Quality_Checklist.md) | 內容品質檢查完整版（含合格/不合格對照範例），課程製作SOP第二節引用的唯一權威版 |
+| mission-writing-rules.md | SS repo `docs/mission-writing-rules.md` | Mission 互動內容動筆前的場景/玩家問題設計規則 |
+| mission-engine-schema.md | SS repo `docs/mission-engine-schema.md` | Mission Engine 資料格式規範 |
+
+`有的沒的小舖\驚喜樂世界\驚喜學院\AI書院\課程\`底下的「給Codex」交辦指令是個別任務指令，不是通用SOP，不重複收錄。
 
 ## 驚喜學院制度
-> ⚠️ **不存在**（2026-08-04盤點確認）。書院運作規則、解鎖邏輯、層級制度目前沒有獨立文件，散落在各書院程式碼與 CC 記憶裡。待與妹討論後補上。
+| SOP | 位置 | 用途 |
+|---|---|---|
+| 驚喜學院制度.md | [06_Operations/驚喜學院制度.md](驚喜學院制度.md) | 整體階層架構(驚喜學院→書院→系列→產品)、好康書院/繪本推廣兩個例外說明、理財書院內部結構(台股系列vs理財調查局系列)、各書院現況總表、書院UX規則。2026-08-04建立 |
+
+> ⚠️ 各書院解鎖技術機制（SHA-256/GrantService等）盤點尚未逐一查證，見文件內「待補」節，需要專門investigation才能補上。
 
 ## 收費制度
 | SOP | 位置 | 用途 |
