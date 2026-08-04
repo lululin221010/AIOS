@@ -28,7 +28,7 @@
 | [03_Products](03_Products/README.md) | ST／SS／SD 產品定位與策略 | 僅 README，內容未建立 |
 | [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 含 [AIOS Git Root 稽核報告](04_Systems/AIOS_git_root_audit.md)（已解決） |
 | [05_Knowledge](05_Knowledge/README.md) | 名詞定義、代號表、參考資料 | 僅 README，內容未建立 |
-| [06_Operations](06_Operations/README.md) | 跨站共用 SOP | 僅 README，內容未建立 |
+| [06_Operations](06_Operations/README.md) | 跨站共用 SOP | **全生態系SOP總索引已建立**（2026-08-04）：電子書出版／繪本製作／影片製作／社群經營／內容品質／AI Agent安全制度都有連結；課程SOP／驚喜學院制度／收費制度標記為「不存在，待補」 |
 | [07_Projects](07_Projects/README.md) | 任務儀表板、停車場 | 含 1 個子專案（Platform Transformation） |
 | [08_Daily](08_Daily/README.md) | 每日工作記錄 | 僅 README，內容未建立 |
 | [09_Archive](09_Archive/README.md) | 被取代的舊版文件歸檔 | 僅 README，內容未建立 |
@@ -52,7 +52,7 @@
 | 書院架構總表 v7 | `G:\我的雲端硬碟\總策畫\academy-master-plan-v7_lulu_20260629.html` | 02_Assets / 03_Products |
 | 內容資產重整 Schema 與映射 | ST repo `docs/內容資產重整-Schema與映射-20260702.md` | 02_Assets |
 | 內容資產重整 v1.1 一致性稽核 | ST repo `docs/內容資產重整-v1.1-一致性稽核-20260702.md` + `docs/data/*.csv` `*.json` | 02_Assets |
-| 電子書上架全流程 SOP | ST repo `docs/電子書上架全流程SOP.md` | 06_Operations |
+| ~~電子書上架全流程 SOP~~ | ST repo `docs/電子書上架全流程SOP.md` | 2026-08-04已收錄進 [06_Operations](06_Operations/README.md) 總索引，不再是遺漏項 |
 
 ---
 
