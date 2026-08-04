@@ -74,8 +74,10 @@
 | SOP | 位置 | 用途 |
 |---|---|---|
 | 訂單異常與轉帳核對SOP.md | ST repo `docs/訂單異常與轉帳核對SOP.md` | 三套訂單系統（Order.js／DigitalOrder.js／PurchaseOrder）各自的轉帳核對流程、逾期未付款/金額對不上/重複下單/誤按確認四類異常情境處理規則，2026-08-04建立，唯一權威版。系統完全不做金額自動比對，全靠人工核對，文末附已知系統缺口清單 |
+| 客服與客訴處理SOP.md | ST repo `docs/客服與客訴處理SOP.md` | 客人聯絡管道現況（唯一真正可用管道是LINE官方帳號）、依問題類型分流（一般詢問/實體退貨/電子書退款）、判斷不了時的處理原則，2026-08-04建立。退款「政策」定案在[收費制度.md](收費制度.md)，這份只管「流程」不重複定義政策 |
+| 資料備份與災難復原SOP.md | ST repo `docs/資料備份與災難復原SOP.md` | MongoDB/Vercel Blob現況（目前完全沒有備份機制）、每週備份執行方式、附可直接執行的匯出腳本`scripts/backup-mongodb.mjs`（2026-08-04已實測，成功匯出36個collection共3749筆文件），2026-08-04建立。**意外發現资料庫有大小寫不同的重複collection**（如`digitalOrders`vs`digitalorders`），已記錄為待查缺口 |
 
-> ⚠️ 客服/客訴處理流程、資料備份/災難復原SOP尚未撰寫，是SOP優先順序第一級的下兩項待辦，見ST repo memory `project_next_sop_priority_queue_20260804`
+SOP優先順序第一級（訂單異常/客訴/備份）三項2026-08-04全部完成。
 
 ---
 
