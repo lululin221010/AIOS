@@ -69,6 +69,7 @@
 | SOP | 位置 | 用途 |
 |---|---|---|
 | AI_AGENT_SAFETY.md | ST repo `docs/AI_AGENT_SAFETY.md` | AI Agent 權限、Stage 1~3 信任階段、正式資產修改前必須妹當次同意的規則 |
+| **發包Co前安全檢查SOP.md** | [06_Operations/發包Co前安全檢查SOP.md](發包Co前安全檢查SOP.md) | **每次呼叫`codex exec`前都要看**：CPU delta雙重確認法，避免撞上並行執行造成的中文亂碼bug。2026-08-03建立於`操控與控制`資料夾、2026-08-04轉正搬到這裡——這份SOP的誕生本身就是一次真實的「孤兒SOP」事故（先只在memory筆記裡、後來搬到只有特定任務session才會讀的資料夾），教訓見文件開頭說明 |
 
 ## 訂單/客服/營運
 | SOP | 位置 | 用途 |
