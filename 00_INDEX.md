@@ -27,7 +27,7 @@
 | [02_Assets](02_Assets/README.md) | 公司資產總覽（書院／系列／書、IP 設定） | 含 [定價參考表](02_Assets/Pricing_Reference.md)（2026-07-08，查 MongoDB 即時快照） |
 | [03_Products](03_Products/README.md) | ST／SS／SD 產品定位與策略 | 僅 README，內容未建立 |
 | [04_Systems](04_Systems/README.md) | 跨站技術架構、Git 管理規範 | 含 [AIOS Git Root 稽核報告](04_Systems/AIOS_git_root_audit.md)（已解決） |
-| [05_Knowledge](05_Knowledge/README.md) | 名詞定義、代號表、參考資料 | 僅 README，內容未建立 |
+| [05_Knowledge](05_Knowledge/README.md) | 名詞定義、代號表、參考資料 | 含 [寶庫 Treasure_Vault](05_Knowledge/Treasure_Vault/README.md)（AI工具/技巧/商業案例/情報收藏庫，2026-08-28建立，流水式建檔）／[AI影片演技導演標準](05_Knowledge/AI_Video_Performance_Direction_Standard.md) |
 | [06_Operations](06_Operations/README.md) | 跨站共用 SOP | **全生態系SOP總索引已建立**（2026-08-04）：電子書出版／繪本製作／影片製作／社群經營／內容品質／AI Agent安全制度／[收費制度](06_Operations/收費制度.md)／[課程製作SOP](06_Operations/課程製作SOP.md)／[驚喜學院制度](06_Operations/驚喜學院制度.md)（階層架構/理財書院結構/各書院現況）／訂單異常與轉帳核對SOP／客服與客訴處理SOP／資料備份與災難復原SOP（皆ST repo `docs/`底下）都有連結。原本盤點出的四個缺口（課程SOP／驚喜學院制度／收費制度／全生態系總索引本身）**全部補齊**，SOP優先順序第一級三項（訂單異常/客訴/備份）2026-08-04全部完成 |
 | [07_Projects](07_Projects/README.md) | 任務儀表板、停車場 | 含 1 個子專案（Platform Transformation） |
 | [08_Daily](08_Daily/README.md) | 每日工作記錄 | 僅 README，內容未建立 |
