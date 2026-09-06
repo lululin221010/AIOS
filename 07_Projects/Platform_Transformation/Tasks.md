@@ -62,6 +62,13 @@
      - [ ] Reader 可以正常閱讀
      - [ ] 全流程人工測試通過
 
+## To Do（技術債，待排時間修，非緊急但功能已實際受影響）
+6. **ST（my-bookstore-next-v2）AI 聊天功能兩個備援模型都掛了**：`src/app/api/vip/chat/route.ts`（2026-09-06 發現，程式碼裡已留註解但尚未 commit）
+   - Groq `llama-3.3-70b-versatile` 已下架（`model_not_found`），目前每次呼叫都失敗，一路降級到最底層的靜態文字回覆。測試過可用替代：`qwen/qwen3-8-27b`（繁中輸出正常、格式符合）
+   - Gemini：`gemini-2.0-flash` 回傳 404（已下架）；對應的 Google 專案目前對所有 2.x 模型是 404、對所有 3.x 模型（含 3.8-flash）是 403 permission denied——不是單純換模型名稱能解決，要去 Google AI Studio 確認專案權限
+   - 現況：兩個備援都掛了，聊天功能實際上只剩靜態文字在撐
+   - 待辦：排時間換 Groq 替代模型 + 修 Gemini 專案權限，之後把那兩行註解一併 commit
+
 ## Done
 - ETF 完全解案重複舊草稿已刪除（2026-07-02 前完成）
 - 91 筆商品 Book/Series/Academy schema 映射已完成（ST repo `docs/內容資產重整-Schema與映射-20260702.md`）
