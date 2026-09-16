@@ -1,0 +1,5 @@
+# raw_ore_log底下的測試素材資料夾預設不進版控(2026-09-16定案)
+# 原因：圖片一旦commit進git歷史就永久佔repo體積，就算之後刪除檔案也不會自動瘦身
+# CC不需要git追蹤也找得到本機檔案，所以預設只留在本機；真的想備份到GitHub的資料夾再用 git add -f 個別強制加入
+# prompts.jsonl／README.md不受影響，仍然照常追蹤
+05_Knowledge/raw_ore_log/*/
