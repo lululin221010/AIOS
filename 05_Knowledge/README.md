@@ -12,3 +12,4 @@
 - [design_patterns/immersive_design_patterns_v1.md](design_patterns/immersive_design_patterns_v1.md) — 沉浸式互動設計模式資料庫（v2），入口為「玩家心理目標→設計模式」對照表，含37個案例研究+22個可重複使用設計模式+10個理論框架，供Mission系列等未來互動作品設計參考（2026-07-14建立，2026-07-15擴充至v2）
 - [AI_Video_Performance_Direction_Standard.md](AI_Video_Performance_Direction_Standard.md) — AI影片演技/導演工作標準v2（三層骨架+九欄表演控制+填空模板+Gate檢查表），GPT×Grok交叉review收斂，含CC工程審查（2026-08-24）——內文7.2揭露小雲雀/Seedance 2.5與既有Decision_Log 2026-08-11排除中國供應商決策直接衝突，待妹裁決
 - [Treasure_Vault/](Treasure_Vault/README.md) — 寶庫：AI工具/技巧/商業案例/市場情報收藏庫，跟只收驗證過Prompt的Prompt Library分開維護，流水式建檔（想到一顆交一顆，不等盤點完成），2026-08-28建立，首批B001~B030
+- [SS_Free_Strategy_Independent_Review_20260919.md](SS_Free_Strategy_Independent_Review_20260919.md) — SS「驚喜角落」全免費策略獨立評估（反方review），針對2026-08-27「SS純免費不承擔銷售」決策做不預設立場的檢視，含GA4數據時效性警語（引用數字為8月未重新驗證），2026-09-19建立
