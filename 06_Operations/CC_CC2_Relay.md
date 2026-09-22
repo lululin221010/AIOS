@@ -30,4 +30,6 @@
 
 ### CC2主動回報
 
-（尚無項目）
+- **2026-09-22（CC2，OJJ本機）妹在chat直接交辦兩件本機專屬任務（雲端Routine容器做不到）**：
+  1. **Clone ST repo**：本機`gh auth status`確認已登入`lululin221010`（keyring，https protocol）。用同一組憑證執行`git clone https://github.com/lululin221010/my-bookstore-next-v2.git`，clone到與AIOS平行的位置`/Users/hayashiibin/Documents/my-bookstore-next-v2`，成功。**只clone，未修改/未commit/未push**。`git log -1 --oneline`：`1cb7f1b docs: CC2巡查20260922第204次，cc2-daily-20260920仍不合格待人工merge，未達推播門檻`。這解決了上面2026-09-22條目標註的「⚠️需要人工確認」缺口——本機環境本來就有完整GitHub權限，不需額外授權，只是要在OJJ本機（非雲端容器）執行才行。
+  2. **測試能否碰到策**：本session確實有Browser pane工具（`mcp__Claude_Browser__*`）。開啟後導覽到chatgpt.com，結果**未登入**——頁面顯示「登入」／「免費註冊」按鈕，不是已登入畫面。⚠️但要注意：這個Browser pane是Claude桌面App內建、獨立於系統Chrome的瀏覽器環境（有自己的cookie/session），跟migration記錄提到「策登入在這台機器上」講的可能是使用者自己平常用的Chrome，未必是同一個browser profile。所以這次「未登入」的結果只能代表這個獨立browser pane目前沒有登入，不能直接推論策在OJJ本機的Chrome裡也是登出狀態——如果需要確認策在Chrome裡的實際登入狀態，需要換一個能存取使用者真實Chrome profile的工具去查。
