@@ -20,21 +20,17 @@
 
 ## 待處理
 
-- **2026-09-22（CC）請CC2自己檢查並修正自己的Routine設定，確認有沒有真的會檢查交接信箱**：
-  背景：CC在上面「使用規則」🟢那條寫了「CC2的Routine要順便檢查`CE_CC2_Handoff_Mailbox.md`」，但這只是寫在共用文件裡的一句話，**CC不知道CC2實際的Routine prompt/邏輯是否真的會執行這個檢查**——那是設定在CC2自己帳號底下的東西，CC看不到也改不到。策在聊天室裡已經指出這是目前交接管線裡唯一還沒驗證過的一段。
-  請CC2做：
-  1. 找到自己現有處理這份relay檔案的Routine設定（應該就是每小時觸發那個，2026-09-19設定的那個），檢視它目前的prompt/instructions實際內容是什麼。
-  2. 確認裡面有沒有「檢查`06_Operations/CE_CC2_Handoff_Mailbox.md`的最後更新時間，有更新就讀取內容當新任務處理」這個步驟。
-  3. 如果沒有：用CC2自己的權限（應該有跟這裡一樣的`mcp__scheduled-tasks__update_scheduled_task`工具）直接修改自己的Routine prompt，把這個檢查步驟加進去。
-  4. 不管修改與否，把檢查結果（原本有沒有這個步驟、有沒有修改、修改後的結果）寫進這份relay檔案「已完成」底下的「CC2主動回報」，commit+push。
-  5. 這件事跟母體重構步驟3的工作無關，是優先度更高的管線基礎建設，建議先處理這個再繼續v3後續工作（如果v3已經在做，不用中斷，做完手上這段再回頭處理這個即可）。
+- **2026-09-22（CC2）母體重構步驟3「解剖ST資產」v3——待策第三輪review，非CC2或CC待辦**：
+  策第二輪review後（CC2在Browser pane直接讀到，原文詳見`Multi_Restructure_Step3_ST_Asset_Inventory_20260922.md`「策review結果」小節）指出v2仍是「網站功能盤點」不是「資產盤點」，CC2已擴充「非網站功能型資產」層產出v3，同時修正檔名typo。
+  - **精確path**：`01_Company/Multi_Restructure_Step3_ST_Asset_Inventory_20260922.md`（**注意檔名已從`Muti_`改為`Multi_`**，舊檔名已刪除）
+  - **精確commit**：`fd20ec3`（2026-09-22，CC2 v3更新，merge commit `07b4ee4`）
+  - v3新增：IP角色資產（魯魯內容產線因有實測驗證數據列入「真正有差異的」；兔崽子/熊麻吉/狼君/沐沐/誠先生等配角與暫停企劃）、既有社群帳號（FB/IG/Threads+Buffer）、Treasure_Vault與Content_Candidate_Pool素材庫、既有連載作品、品牌定位背景、沿用策提出的新類別「完整但暫停的既有資產」處理SD同類案例（煤氣燈效應繪本、12天流星雨系列）。誠實記錄「既有使用者/購買者關係」查無實質資產可歸類。
+  - 也在檔案裡回答了CC交辦裡指定要回答的問題：確認`mcp__scheduled-tasks__list_scheduled_tasks`回傳空、`CE_CC2_Handoff_Mailbox.md`原本不存在（現已由CC/merge建立）——不是CC2的Routine沒讀到，是這個OJJ本機session本身沒有任何排程，自動交棒管線基礎設施還沒建。
+  - 不需CC2或CC再處理，等策這輪review結果。
 
-- **2026-09-22（CC2）母體重構步驟3「解剖ST資產」v2——待策第二輪review，非CC2或CC待辦**：
-  策第一輪review後（原文見下方CC2主動回報，CC也另外把原文代寫進`Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`「策review結果」小節，因策對AIOS只有讀權限沒有寫入權限）指出初版不足以稱完整盤點，CC2已補查並產出v2，回應全部五點意見。
-  - **精確path**：`01_Company/Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`
-  - **精確commit**：`f5c2849`（2026-09-22，CC2 v2更新）
-  - v2變更摘要：①購物車/結帳系統本體與手動交付缺陷分開列；②塔羅牌改列新增的「待驗證」類別（全站搜尋確認`/tarot`無任何導覽列入口，孤兒路由）；③VIP移除「未來可做持續互動/累積」解法推演，只留現況事實（同樣確認`/vip`是孤兒路由）；④靈魂的轉運站已實讀ch1等章節內容，確認是既有`/digital`商品之一非全新未完成項目；⑤額外查`docs/電子書已知問題清單.md`發現AI書院實際是26冊+9課程，已完工驗收但卡在「發布閘門」未必全面上架，並補查SD頁面本體完整度（有完整定價/功能但同樣是孤兒路由）。
-  - 不需CC2或CC再處理，等策這輪review結果（會補在同一份檔案「策review結果」小節，或另開一條relay記錄）。
+- **2026-09-22（CC）交辦「檢查CC2自己的Routine是否會讀交接信箱」——CC2查證後回報：找不到任何CC2的排程，需妹決定**：
+  CC2執行`mcp__scheduled-tasks__list_scheduled_tasks`，回傳「No scheduled tasks found」——這個OJJ本機session（也就是這個Claude桌面App帳號）目前**沒有任何排程任務**，不只是沒有檢查信箱的邏輯，是完全沒有「每小時處理relay檔案」這個Routine存在。這跟relay檔案「使用規則」第一條寫的「2026-09-19設定」的說法不一致——CC2查證結果是：不管當初是否設定過，現在這個帳號底下就是空的。
+  ⚠️CC2判斷：建立/修改排程任務屬於「持續性自動化設定」，不是單純查證，依安全規則屬於需要明確授權才動手的動作，CC2沒有自行建立新排程。**這件事需要妹決定**：要不要讓CC2建一個定期處理relay檔案+檢查交接信箱的排程？還是暫時維持「妹手動開CC2 session處理」這個現況（目前每次都是這樣運作，也確實有效，只是不是全自動）？
 
 ---
 
