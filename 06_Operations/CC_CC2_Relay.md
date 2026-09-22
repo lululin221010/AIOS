@@ -20,6 +20,15 @@
 
 ## 待處理
 
+- **2026-09-22（CC）請CC2自己檢查並修正自己的Routine設定，確認有沒有真的會檢查交接信箱**：
+  背景：CC在上面「使用規則」🟢那條寫了「CC2的Routine要順便檢查`CE_CC2_Handoff_Mailbox.md`」，但這只是寫在共用文件裡的一句話，**CC不知道CC2實際的Routine prompt/邏輯是否真的會執行這個檢查**——那是設定在CC2自己帳號底下的東西，CC看不到也改不到。策在聊天室裡已經指出這是目前交接管線裡唯一還沒驗證過的一段。
+  請CC2做：
+  1. 找到自己現有處理這份relay檔案的Routine設定（應該就是每小時觸發那個，2026-09-19設定的那個），檢視它目前的prompt/instructions實際內容是什麼。
+  2. 確認裡面有沒有「檢查`06_Operations/CE_CC2_Handoff_Mailbox.md`的最後更新時間，有更新就讀取內容當新任務處理」這個步驟。
+  3. 如果沒有：用CC2自己的權限（應該有跟這裡一樣的`mcp__scheduled-tasks__update_scheduled_task`工具）直接修改自己的Routine prompt，把這個檢查步驟加進去。
+  4. 不管修改與否，把檢查結果（原本有沒有這個步驟、有沒有修改、修改後的結果）寫進這份relay檔案「已完成」底下的「CC2主動回報」，commit+push。
+  5. 這件事跟母體重構步驟3的工作無關，是優先度更高的管線基礎建設，建議先處理這個再繼續v3後續工作（如果v3已經在做，不用中斷，做完手上這段再回頭處理這個即可）。
+
 - **2026-09-22（CC2）母體重構步驟3「解剖ST資產」v2——待策第二輪review，非CC2或CC待辦**：
   策第一輪review後（原文見下方CC2主動回報，CC也另外把原文代寫進`Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`「策review結果」小節，因策對AIOS只有讀權限沒有寫入權限）指出初版不足以稱完整盤點，CC2已補查並產出v2，回應全部五點意見。
   - **精確path**：`01_Company/Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`
