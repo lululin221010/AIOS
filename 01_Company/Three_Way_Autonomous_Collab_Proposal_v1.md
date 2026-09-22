@@ -7,7 +7,7 @@
 ## 🔴 2026-09-22當天執行後的兩項更正
 
 1. **✅第27行「CC2 clone ST repo」在OJJ本機互動session已成功**：確認原因是雲端Routine容器沒有OJJ本機的GitHub憑證，不是權限設定問題。改由妹直接開OJJ機器、請CC2在互動session（不是自動Routine）執行後，`gh auth status`本來就登入好，`git clone`一次成功，clone到`/Users/hayashiibin/Documents/my-bookstore-next-v2`。**零成本清單第4項已完成**，CC2現在能獨立讀ST repo內容。
-2. **⚠️第29行「CC2↔策：不存在」測試結果是「目前仍不存在，但缺口找到了」**：CC2的互動session確實有Browser pane工具，但導覽到chatgpt.com後**未登入**。CC2自己正確指出關鍵：Claude桌面App內建的Browser pane是獨立於系統Chrome的瀏覽器環境，有自己的cookie/session，跟「策登入在這台Mac上」講的很可能是使用者平常用的系統Chrome，不是同一個browser profile。**這代表CC2↔策要打通，不是技術做不到，而是還沒有人在CC2的Browser pane裡登入過策**——跟這個Windows機器上CC的Browser pane完全一樣的道理（妹先登入，CC才能讀寫）。下一步：妹找時間在OJJ本機，把CC2叫出Browser pane、導覽到chatgpt.com、手動登入策的帳號一次，之後應該就能比照這邊的模式讓CC2直接跟策對話。
+2. **✅✅第29行「CC2↔策：不存在」已經打通「讀」的方向，同一天完成**：妹在CC2的Browser pane裡登入策後，CC2自己導覽到chatgpt.com、確認登入狀態是Jane(Plus)、自己從側邊欄打開一個既有對話（「傳達執行結果」）、正確讀出裡面「妹→小策→CC2」的內容，證明不只是打得開網頁，是真的能讀到策的既有對話。CC2也正確遵守「不要修改AIOS」的指示，看到舊對話裡要求commit+push時主動停下來問確認，沒有自己硬做——安全機制運作正常。**下一關（策提議）**：讓CC2自己新開一個ChatGPT對話、主動傳一句話給策、再讀策的回覆——如果這關也通，就是CC2↔策真正雙向即時溝通，不再需要CC居中轉述。結果待補。
 
 ## 策要的目標（不重複貼原話，見memory）
 
