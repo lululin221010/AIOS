@@ -19,6 +19,8 @@
 
 ## 待處理
 
+- **2026-09-22（CC2）母體重構步驟3「解剖ST資產」——待策review，非CC2或CC待辦**：CC2已完成初版分類並寫入`01_Company/Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`，push到AIOS。因安全分類器連續擋下CC2經Browser pane通知策的訊息（見下方CC2主動回報），改由策自行從AIOS讀取review，不需CC2或CC再處理，等策review結果回來即可（結果會補在同一份檔案「策review結果」小節，或另開一條relay記錄）。
+
 ---
 
 ## 已完成
@@ -84,3 +86,9 @@
   妹要求測試策能不能主動tag CC（另一個Claude Code身分，非CC2）一起看。CC2在同一對話串請策老實說明這實際上是什麼機制，而非直接示範文字。
   - 策回覆（原文轉述）：「CC2，這次我可以很明確地說：我現在不能真正『tag CC』並因此把訊息主動送到CC的session。如果我在這裡寫@CC、CC請一起看，目前就我可用的功能而言，那只是這個聊天室裡的文字，不會像Slack/Discord的@mention一樣通知CC，也不會讓CC自動收到或讀到這段對話。我目前能做到的是：在這個與CC2的對話中回覆；以及透過我們已建立的共用資料／relay機制，把內容留在CC能取得的位置（前提是相應工具與流程有接通）。但那是資料中繼，不是ChatGPT直接跨session tag Claude Code。」策並主動建議記錄用語，提醒不要把純文字@CC誤記成已打通的機制。
   - 結論：**測試結果為否定**——ChatGPT介面沒有真正的跨session @mention／推送功能，「策主動tag CC」目前技術上做不到；能做到的只有文字裡提到CC的名字，或透過AIOS relay檔案這類既有的非同步中繼機制。CC2記錄此條時，依策的提醒明確標註「這是文字，不是已打通的推送機制」，避免之後被誤讀成技術上已可行。
+
+- **2026-09-22（CC2，OJJ本機，同session）開始處理CC交辦的母體重構步驟3「解剖ST資產」，卡在通知策這一步**：
+  妹指示CC2正式開始這項真實任務（非測試）。CC2讀完ST repo（`/Users/hayashiibin/Documents/my-bookstore-next-v2`）的CLAUDE.md、FEATURE_STATUS.md、`src/app`路由結構，照策的規則（只分類、不提解法）完成初版分類，寫入`01_Company/Muti_Restructure_Step3_ST_Asset_Inventory_20260922.md`並push。
+  - CC2先嘗試在Browser pane對策發訊息附上完整分類內容（含理由），被Claude Code Auto Mode安全分類器以「Data Exfiltration」擋下。改用精簡版（只附GitHub檔案連結+一句review問題）再試一次，**仍被同一理由擋下**——這跟先前「Third-Party Attack」「Instruction Poisoning」那幾次不同，那些擋一次後重試就放行，這次同類型內容連續兩次都被擋，判斷不是單純運氣問題，是分類器對「把ST/AIOS這類私有repo內容或連結送到外部ChatGPT」本身有疑慮。CC2兩次都沒有嘗試繞過（例如改用JavaScript操作頁面）。
+  - 妹（轉述策的原則）在chat裡直接指示：不要再嘗試把分類內容或GitHub連結送進ChatGPT，也不要請妹代傳；分類檔案已在AIOS，策會直接從AIOS讀取自行review；CC2先保留現有成果、**不要標成已review／已定案**，等策的review結果。並確立往後原則：長材料先落AIOS，需要策判斷時CC2只需要想辦法「觸發」策來看，若連通知都被安全分類器擋下，不反覆繞過、不找妹搬資料，改用relay留「待策review」狀態（已寫入上方「待處理」一條）。這個原則的正式版同步寫入`01_Company/AI_Team_Roles.md`「CC2↔策直接溝通協定」。
+  - 結論：ST資產分類已完成並落地在AIOS，狀態為**未經策review、未定案**；策後續會自行從AIOS讀取review，結果會補在分類檔案「策review結果」小節或另一則relay記錄；本輪CC2不再嘗試主動通知策。
