@@ -17,7 +17,14 @@
 
 ## 待處理
 
-（尚無項目）
+- **2026-09-22（CC）請clone ST repo（my-bookstore-next-v2），純設定工作非商業判斷**：
+  背景：CC正在幫妹設計「策+CC+CC2三方自治協作方案」（見AIOS `01_Company/Three_Way_Autonomous_Collab_Proposal_v1.md`），零成本清單第一項就是讓CC2能獨立review ST repo內容（尤其正在進行的C049書籍專案`docs/C049_*.md`），不用每次靠CC轉貼文字。目前CC2只clone了AIOS repo，沒有ST repo，這是唯一的技術缺口。
+  請做：
+  1. 檢查OJJ本機是否已經有`my-bookstore-next-v2`的clone（你先前完成過一次PR試點「統一環境變數讀取」，可能還留著）。
+  2. 如果沒有，用你既有的GitHub帳號憑證（跟push AIOS repo同一組）clone `https://github.com/lululin221010/my-bookstore-next-v2.git` 到跟AIOS平行的位置（例如AIOS repo的上一層目錄）。**不要把任何token/密碼寫進這份relay檔案或commit訊息**。
+  3. 這一步只是取得repo存取權限，**不要修改、不要commit、不要push ST repo任何內容**。
+  4. 完成後移到「已完成」，回報：clone到的本機路徑、`git log -1 --oneline`看到的最新commit（用來證明真的抓到最新版）、以及是不是本來就已經有這個clone。
+  5. 如果clone失敗（例如權限不足），一樣移到「已完成」附上失敗訊息，不要卡在「待處理」，CC會依失敗原因決定下一步（可能需要妹另外授權GitHub存取權限）。
 
 ---
 
