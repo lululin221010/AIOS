@@ -4,6 +4,11 @@
 狀態：提案待審——策review成本合理性，CC review技術是否真的需要花這筆錢，最後妹拍板
 關聯：[[project_ce_three_way_autonomous_collab_proposal_20260922]]（memory，含策原話與需求細節）、`AI_Team_Roles.md`（現行分工，本文件不取代它，是它的延伸）
 
+## 🔴 2026-09-22當天執行後的兩項更正
+
+1. **第27行「CC2 clone ST repo」實測失敗，原因比預期更根本**：CC2端的自動Routine跑在獨立雲端容器（每次全新建立），不是OJJ這台實體機器，沒有OJJ本機的GitHub憑證，且這個容器的GitHub存取權限目前只涵蓋`aios` repo。**這代表零成本清單第4項不能透過relay檔案自動完成**，必須妹直接開OJJ機器、在CC2互動session裡做（該session才有本機憑證），詳見[[reference_cc_cc2_relay_channel_20260919]]的架構修正。
+2. **第29行「CC2↔策：不存在」可能要改寫**——OJJ搬遷記錄（[[project_cc2_ojj_migration_20260917]]）意外提到「策也直接登入在OJJ這台Mac上」。如果CC2的互動session（不是雲端Routine）本身有Browser pane工具，且能碰到OJJ本機瀏覽器裡已登入的策，就代表**CC2可能不需要透過CC轉述，能直接跟策對話**，這會讓「三方自治協作」的可行性大幅提高，不再受限於「只有CC能碰策」。這件事2026-09-22當天已請CC2在OJJ本機互動session測試，結果待CC2 commit回報後更新本文件。
+
 ## 策要的目標（不重複貼原話，見memory）
 
 一句話：小策提出判斷→CC挑問題→CC2 review→有分歧互相辯證→能收斂就收斂成方案→只有真的卡住或涉及妹的偏好/預算/重大拍板才找妹。**共同工作桌只是基礎設施，不是終點**——三方進了同一個資料流卻還是各講各的、等妹主持會議，等於沒解決問題。
