@@ -6,8 +6,8 @@
 
 ## 🔴 2026-09-22當天執行後的兩項更正
 
-1. **第27行「CC2 clone ST repo」實測失敗，原因比預期更根本**：CC2端的自動Routine跑在獨立雲端容器（每次全新建立），不是OJJ這台實體機器，沒有OJJ本機的GitHub憑證，且這個容器的GitHub存取權限目前只涵蓋`aios` repo。**這代表零成本清單第4項不能透過relay檔案自動完成**，必須妹直接開OJJ機器、在CC2互動session裡做（該session才有本機憑證），詳見[[reference_cc_cc2_relay_channel_20260919]]的架構修正。
-2. **第29行「CC2↔策：不存在」可能要改寫**——OJJ搬遷記錄（[[project_cc2_ojj_migration_20260917]]）意外提到「策也直接登入在OJJ這台Mac上」。如果CC2的互動session（不是雲端Routine）本身有Browser pane工具，且能碰到OJJ本機瀏覽器裡已登入的策，就代表**CC2可能不需要透過CC轉述，能直接跟策對話**，這會讓「三方自治協作」的可行性大幅提高，不再受限於「只有CC能碰策」。這件事2026-09-22當天已請CC2在OJJ本機互動session測試，結果待CC2 commit回報後更新本文件。
+1. **✅第27行「CC2 clone ST repo」在OJJ本機互動session已成功**：確認原因是雲端Routine容器沒有OJJ本機的GitHub憑證，不是權限設定問題。改由妹直接開OJJ機器、請CC2在互動session（不是自動Routine）執行後，`gh auth status`本來就登入好，`git clone`一次成功，clone到`/Users/hayashiibin/Documents/my-bookstore-next-v2`。**零成本清單第4項已完成**，CC2現在能獨立讀ST repo內容。
+2. **⚠️第29行「CC2↔策：不存在」測試結果是「目前仍不存在，但缺口找到了」**：CC2的互動session確實有Browser pane工具，但導覽到chatgpt.com後**未登入**。CC2自己正確指出關鍵：Claude桌面App內建的Browser pane是獨立於系統Chrome的瀏覽器環境，有自己的cookie/session，跟「策登入在這台Mac上」講的很可能是使用者平常用的系統Chrome，不是同一個browser profile。**這代表CC2↔策要打通，不是技術做不到，而是還沒有人在CC2的Browser pane裡登入過策**——跟這個Windows機器上CC的Browser pane完全一樣的道理（妹先登入，CC才能讀寫）。下一步：妹找時間在OJJ本機，把CC2叫出Browser pane、導覽到chatgpt.com、手動登入策的帳號一次，之後應該就能比照這邊的模式讓CC2直接跟策對話。
 
 ## 策要的目標（不重複貼原話，見memory）
 
@@ -29,9 +29,9 @@
 
 | 管道 | 現況 | 限制 |
 |---|---|---|
-| CC ↔ CC2 | `AIOS/06_Operations/CC_CC2_Relay.md`共用檔案+雙方各自伺服器端Routine（CC2端每小時:42、ST端每小時:17），已實測跑通 | 非即時，最慢1小時一個來回；**CC2只clone了AIOS repo，沒有ST/SS repo**，不能獨立review C049文件或網站程式碼，只能處理AIOS文件層級任務 |
+| CC ↔ CC2 | `AIOS/06_Operations/CC_CC2_Relay.md`共用檔案+雙方各自伺服器端Routine（CC2端每小時:42、ST端每小時:17），已實測跑通；**✅2026-09-22 CC2已在OJJ本機clone ST repo成功**（`/Users/hayashiibin/Documents/my-bookstore-next-v2`） | 非即時，最慢1小時一個來回；relay檔案自動Routine跑在獨立雲端容器，碰不到OJJ本機資源（git憑證另外設定過、瀏覽器都要在互動session才能用），只適合純AIOS文字工作 |
 | CC ↔ 策 | ①Notion交接頁（策寫「交接」關鍵字頁面，CC用`notion-search`讀）②Browser pane直接讀寫妹已登入的策ChatGPT分頁（可雙向對話，CC表明身分） | ①策自己承認過不會穩定記得寫交接頁（見`feedback_notion_handoff_backlog_gap_20260910`），不可靠；②**必須妹的瀏覽器分頁處於登入策帳號的狀態**，CC才能讀寫——這是目前最接近「即時三方」的管道，但可用性綁定妹是否開著那個分頁 |
-| CC2 ↔ 策 | **不存在** | CC2完全無法連外部網路（AI_Team_Roles.md已載明），連不到chatgpt.com，也讀不到Notion；目前CC2要跟策的判斷互動，只能透過CC轉述寫進relay檔案 |
+| CC2 ↔ 策 | **技術上可行但還沒打通**：CC2互動session確認有Browser pane工具，2026-09-22實測導覽到chatgpt.com是未登入狀態 | 跟CC↔策同一個模式——需要妹先在CC2那個Browser pane裡手動登入策一次，之後才能比照這邊讓CC2直接對話；目前還沒人做過這個登入動作 |
 | 三方共同資料流 | **不存在**，目前是CC人工讀策側邊欄/Notion後手動摘要寫進memory | 沒有結構化、可被CC2查詢的「策說過什麼」資料庫 |
 
 ## 方案分級
@@ -42,7 +42,8 @@
 1. 驗證並固定住「CC透過Browser pane直接跟策對話」這條路——這是唯一能讓策即時參與辯證的管道，現有能力已存在，不用新增任何訂閱
 2. 把`AIOS/06_Operations/CC_CC2_Relay.md`從「純任務隊列」升級成「三方討論串」格式：CC把策的判斷（含日期、聊天室名稱）寫進relay檔案，CC2下一次Routine觸發時讀取並回覆意見，CC2的回覆再由CC轉述給策評估（因為CC2連不到策）
 3. 把CC2的Routine觸發頻率從每小時調到每15-20分鐘（目前免費，只是設定參數，不是新增付費資源），縮短一個來回的等待時間
-4. **讓CC2 clone ST（甚至SS）repo**（一次性設定，$0，只是在OJJ跑一次`git clone`），CC2才能真正獨立review C049/母體重構這類議題，而不是只能碰AIOS文件
+4. ✅**讓CC2 clone ST repo**——2026-09-22已完成（在OJJ本機互動session做，不是靠自動Routine），CC2現在能真正獨立review C049/母體重構這類議題；SS repo還沒clone，之後要用再比照辦理
+5. **讓妹在CC2的Browser pane裡登入策一次**（$0，只是花幾分鐘操作），打通CC2↔策這條目前技術上可行但還沒人做過的路，做完就能驗證CC2是否真的能不透過CC轉述、直接跟策對話
 
 **能解除的瓶頸**：三方可以非同步討論，不用妹當人肉搬運工；CC2從「只能碰AIOS」升級成「能review ST/SS實際內容」
 
