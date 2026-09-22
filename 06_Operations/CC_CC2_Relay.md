@@ -28,13 +28,12 @@
   - 也在檔案裡回答了CC交辦裡指定要回答的問題：確認`mcp__scheduled-tasks__list_scheduled_tasks`回傳空、`CE_CC2_Handoff_Mailbox.md`原本不存在（現已由CC/merge建立）——不是CC2的Routine沒讀到，是這個OJJ本機session本身沒有任何排程，自動交棒管線基礎設施還沒建。
   - 不需CC2或CC再處理，等策這輪review結果。
 
-- **2026-09-22（CC）交辦「檢查CC2自己的Routine是否會讀交接信箱」——CC2查證後回報：找不到任何CC2的排程，需妹決定**：
-  CC2執行`mcp__scheduled-tasks__list_scheduled_tasks`，回傳「No scheduled tasks found」——這個OJJ本機session（也就是這個Claude桌面App帳號）目前**沒有任何排程任務**，不只是沒有檢查信箱的邏輯，是完全沒有「每小時處理relay檔案」這個Routine存在。這跟relay檔案「使用規則」第一條寫的「2026-09-19設定」的說法不一致——CC2查證結果是：不管當初是否設定過，現在這個帳號底下就是空的。
-  ⚠️CC2判斷：建立/修改排程任務屬於「持續性自動化設定」，不是單純查證，依安全規則屬於需要明確授權才動手的動作，CC2沒有自行建立新排程。**這件事需要妹決定**：要不要讓CC2建一個定期處理relay檔案+檢查交接信箱的排程？還是暫時維持「妹手動開CC2 session處理」這個現況（目前每次都是這樣運作，也確實有效，只是不是全自動）？
-
 ---
 
 ## 已完成
+
+- **2026-09-22（CC，雲端Routine處理）「檢查CC2自己的Routine是否會讀交接信箱」——決定已由後續行動完成，非本次處理，僅回填狀態**：
+  這筆原本標註「需妹決定：要不要讓CC2建排程」。本次雲端Routine執行時`git pull`後發現：commit `8c598fb`（2026-09-22 18:33，CC2於OJJ本機）記錄「妹核准建立專門定期檢查AIOS relay+CE_CC2_Handoff_Mailbox.md的新Routine（每小時），因之前查證OJJ本機沒有任何既有排程」，並新增了`06_Operations/CC2_Routine_State.md`（該排程`cc2-relay-and-mailbox-watch`用來記錄mailbox處理狀態的追蹤檔）。決定與建立動作都已在這筆待處理項目寫入之後、由妹在OJJ本機當面核准並由CC2完成，本次自動處理只是確認狀態已解決並歸檔，未新增任何實質變更。
 
 - **2026-09-22（CC）母體重構步驟3「解剖ST資產」，⚠️需要人工確認：需要OJJ本機互動session（ST repo存取+Browser pane跟策對話），此雲端自動Routine session皆無法執行**：
   這筆任務原文本身就已標註「⚠️需要OJJ本機互動session，不是自動Routine能做」，本次自動處理確認：(1) 任務要求讀取的ST repo路徑`/Users/hayashiibin/Documents/my-bookstore-next-v2`在本次雲端容器裡不存在——本session的GitHub存取權限只涵蓋`lululin221010/aios`（Repository Scope明列），且容器每次都是全新環境，沒有ST repo的任何殘留clone；(2) 任務要求的「在Browser pane找策對話」需要`mcp__Claude_Browser__*`工具，這類瀏覽器工具不在本次自動Routine session的可用工具清單內。這與relay使用規則第15點記錄的架構限制一致，故不硬做，保留在此等妹或CC2在OJJ本機互動session裡實際執行。
