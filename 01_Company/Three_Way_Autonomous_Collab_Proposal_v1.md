@@ -91,5 +91,11 @@
 - 沒有實際驗證過「CC透過Browser pane操作策的ChatGPT分頁」這個登入狀態能撐多久不用妹重新登入——如果經常斷線，零成本方案的核心管道就不穩，需要妹協助測試
 - CC2現有的Claude帳號方案等級（Pro/Max/其他）目前不確定，需要查證才能算出「低成本」的實際金額
 
+## 🔲 待辦：反向通道研究（策提出，2026-09-22，尚未開始）
+
+2026-09-22當天CC2↔策雙向測試完成後，妹追問「策能不能反過來主動聯絡CC」，策當場承認**這個ChatGPT session沒有像CC2那個Browser pane一樣能操控OJJ上Claude UI的工具**，不能因為CC2能控制ChatGPT就推論策也能反向控制Claude。策建議讓CC/CC2研究這條「反向通道」怎麼建立。
+
+CC（本session）的技術判斷：這不是「多測幾次就會通」的問題，性質跟今天打通的方向不同——今天靠的是CC2本來就有Browser pane這個工具；反向要讓策主動聯絡CC，需要ChatGPT本身有辦法對外呼叫（例如自訂GPT Action打一個CC這邊能接收的API/webhook），這是要架設新東西，不是重試的問題。**而且已經有一個能用但非即時的反向管道**：策寫Notion交接頁，CC每次新session開場會查（`notion-search`），這是「策→CC」的既有異步路徑。如果目標是「策主動、CC即時回應」的同步版本，才是真正需要研究的工程題，優先度低於直接應用CC2↔策能力到母體重構本身。
+
 ## 來源
 - [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan)（Anthropic官方，含Agent SDK獨立額度已暫停的說明）
