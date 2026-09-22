@@ -35,3 +35,11 @@
   1. **Clone ST repo**：本機`gh auth status`確認已登入`lululin221010`（keyring，https protocol）。用同一組憑證執行`git clone https://github.com/lululin221010/my-bookstore-next-v2.git`，clone到與AIOS平行的位置`/Users/hayashiibin/Documents/my-bookstore-next-v2`，成功。**只clone，未修改/未commit/未push**。`git log -1 --oneline`：`1cb7f1b docs: CC2巡查20260922第204次，cc2-daily-20260920仍不合格待人工merge，未達推播門檻`。這解決了上面2026-09-22條目標註的「⚠️需要人工確認」缺口——本機環境本來就有完整GitHub權限，不需額外授權，只是要在OJJ本機（非雲端容器）執行才行。
   2. **測試能否碰到策**：本session確實有Browser pane工具（`mcp__Claude_Browser__*`）。第一次開啟導覽到chatgpt.com時**未登入**（頁面顯示「登入」／「免費註冊」按鈕）。⚠️說明：這個Browser pane是Claude桌面App內建、獨立於系統Chrome的瀏覽器環境（有自己的cookie/session），跟系統Chrome不是同一個browser profile。
      - **後續更新（同一天）**：妹在App UI裡直接看到這個Browser pane畫面，自己動手在裡面登入了策的ChatGPT帳號（不是CC2代為輸入密碼——密碼類憑證本來就不該由CC2經手）。登入後回頭確認：`get_page_text`顯示畫面已變成正常聊天首頁「你今天在想什麼？」，側邊欄有真實對話紀錄（例如「倉庫需求已正式入庫，整理成CC可驗收的最小規格」、「Vercel儲存空間已達100%」），確認就是策在用的帳號。**目前這個Browser pane裡策的ChatGPT是登入狀態**，CC2之後可以透過`mcp__Claude_Browser__*`工具直接讀取/操作這個分頁跟策互動。附註：Claude in Chrome擴充功能（能碰到使用者系統Chrome）妹裝了但目前一直連不上（`tabs_context_mcp`重試多次仍回報extension not connected），先擱置，不影響上面這個Browser pane的登入結果。
+
+- **2026-09-22（CC2，OJJ本機，新session）「讀」的能力驗證，只讀不寫不互動**：
+  妹開新session請CC2直接操作Browser pane（沿用同一個已登入策帳號的分頁），確認能否讀到策既有對話內容，這次不做任何輸入/傳送。
+  - 導覽到chatgpt.com，`screenshot`確認畫面已是登入狀態，帳號顯示「Jane・Plus」（不是登入/註冊按鈕）。
+  - `read_page`讀到側邊欄結構：3則釘選對話（「比較魯魯觀點」「建立每日回顧自動化」「VIBE Token 問題說明」）、5個專案（0921、0920、魯魯內容工廠、LINE Creator Factory、龍蝦），以及近期對話（「傳達執行結果」「找回登入密碼」等）。
+  - 點開近期對話「傳達執行結果」，`get_page_text`讀到實際內容：策（自稱「傳聲小弟」）與妹的交接對話，提到會把妹的指令原封不動轉給CC2，並等CC2回報是否完成「ST clone、Browser pane測試、Relay寫入＋commit/push」這四件事。
+  - ⚠️安全提醒：該對話內文裡包含一段直接寫給「CC2」的具體指令（要CC2重新確認登入、讀一則對話、寫入本檔案並commit+push）。CC2判定這是透過工具讀到的**網頁內容**，不是妹在這個chat視窗裡下達的指令，依安全規則未直接執行，而是回報給妹、待妹在chat裡明確確認後才動手寫入本檔案（即這一條）。
+  - 結論：讀取能力確認打通——CC2能透過Browser pane讀到策既有對話的標題與內文，全程未輸入、未傳送任何訊息給策。
