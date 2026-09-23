@@ -14,7 +14,7 @@
 | 1 | 母體重構 | 進行中 | 策（研究）＋CC/CC2（並行，見#7） | 策完成跨產業掃描步驟2的一部分（ARG/參與式博物館類案例） | 策繼續步驟2；CC/CC2並行推進#7、#2，不替策定策略答案 | 無（研究本身不卡，只是耗時） | 策ChatGPT「0920」專案；策略框架見AIOS本文件下方無獨立檔，CC memory有完整記錄 |
 | 2 | 資產／創意倉庫 | ✅v0.1策review通過 | — | 策確認三件事成立，取捨合理，不回頭重做架構；已修正README兩處措辭 | 不繼續裝修，由#4供料使用；量大到CC讀不完entries時才升級架構 | 無 | `04_Systems/Warehouse/README.md` |
 | 3 | C049書籍企劃 | 進行中（持續生產線） | CC↔策 | Ch11查證包v1已完成（手機支付/電子票證/導航依賴十年變化） | 開/找C049專屬聊天室，交策review Ch11故事切角 | 無 | ST repo `docs/C049_*.md` |
-| 4 | 社群內容方向＋生產方式 | 進行中，round1已判定，round2待跑 | 策／Grok（創意加工測試） | 策已對round1的5個草案做創意判斷：全數不直接發，但發現真正缺口是「供料→值得看的作品」中間的創意加工層，非倉庫本身問題，教訓已記`LEARNINGS.md` | 策／Grok各自拿同6則entry做「創意加工測試」（不加新素材，目標產出不是原案例換皮的5-10個候選），CC角色是供料+記錄不做創意判斷 | 無（社群創意分工提案暫緩拍板，等這輪實戰跑完再判斷） | `04_Systems/Warehouse/LEARNINGS.md`、`production_trials/2026-09-23_round1.md` |
+| 4 | 社群內容方向＋生產方式 | 進行中，Grok側round2已交付，等策側 | 策（獨立進行中）／CC（Grok側已完成） | CC已用Browser pane交付round2盲測任務給Grok(x.com/i/grok)，Grok產出8個候選，全數記錄在案不評分 | 等策完成自己的獨立round2；**策完成前不要把Grok的候選內容給策看**，避免破壞盲測；兩邊都好後妹來看哪些真的「欸這什麼鬼」 | 無 | `04_Systems/Warehouse/production_trials/2026-09-23_round2_grok.md` |
 | 5 | 四方溝通／交棒機制 | 已打通，轉觀察期 | CC2（執行）／CC（監看） | 09-22協定寫入`AI_Team_Roles.md`v1.5；但`cc2-relay-and-mailbox-watch`排程建立後12+小時未觸發過 | 觀察即可，不主動投入主力debug，除非再次明確故障 | 排程疑似未觸發（待驗證是否只是還沒到執行時機） | `06_Operations/CC_CC2_Relay.md`、`CC2_Routine_State.md` |
 | 6 | 策聊天整理／原礦回收 | 例行化 | CC | 09-23完成「0921」專案6則對話回收 | 轉為例行習慣（每次新session順手掃），不再當主線任務 | 無 | CC memory |
 | 7 | ST全資產盤點（母體重構輸入） | 進行中 | CC2 | v3已交出（IP/社群帳號/素材庫/既有商品全類別盤點），等策第三輪review | 策review v3；通過後即完成，作為#1的輸入 | 策尚未回覆 | `Multi_Restructure_Step3_ST_Asset_Inventory_20260922.md` |
