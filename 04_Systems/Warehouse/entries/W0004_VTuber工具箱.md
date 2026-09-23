@@ -5,8 +5,8 @@ source: 策ChatGPT「0921」專案—分析VTuber應用
 type: 形式／技術機制參考
 status: 收
 tags: [魯魯, VTuber, 角色IP, 雙重存在狀態]
-used_count: 0
-last_used: null
+used_count: 2
+last_used: 2026-09-23
 ---
 
 ## 機制
@@ -23,4 +23,5 @@ last_used: null
 
 ## 使用紀錄
 
-（尚未使用）
+- 2026-09-23：README③重組demo用到一次（魯魯貼文提案，僅示範用非正式產出）
+- 2026-09-23：production_trials round1「D. SS期間展小提案」用到，性質是企劃提案非單則貼文，待策/妹確認是否排進下月展期
