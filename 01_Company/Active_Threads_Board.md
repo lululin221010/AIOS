@@ -14,7 +14,7 @@
 | 1 | 母體重構 | 進行中 | 策（研究）＋CC/CC2（並行，見#7） | 策完成跨產業掃描步驟2的一部分（ARG/參與式博物館類案例） | 策繼續步驟2；CC/CC2並行推進#7、#2，不替策定策略答案 | 無（研究本身不卡，只是耗時） | 策ChatGPT「0920」專案；策略框架見AIOS本文件下方無獨立檔，CC memory有完整記錄 |
 | 2 | 資產／創意倉庫 | ✅v0.1策review通過 | — | 策確認三件事成立，取捨合理，不回頭重做架構；已修正README兩處措辭 | 不繼續裝修，由#4供料使用；量大到CC讀不完entries時才升級架構 | 無 | `04_Systems/Warehouse/README.md` |
 | 3 | C049書籍企劃 | 進行中（持續生產線） | CC↔策 | Ch11查證包v1已完成（手機支付/電子票證/導航依賴十年變化） | 開/找C049專屬聊天室，交策review Ch11故事切角 | 無 | ST repo `docs/C049_*.md` |
-| 4 | 社群內容方向＋生產方式 | round3雙輪班制執行中，CC已交第一棒 | 輪值：CC✅→策→Grok→C→Co | 策定案「創作輪班」(第一作者不看他人成品獨立產出)+「效果輪班」(記第一作者/妹反應/社群反應，多輪後才看質性強項，不比較性淘汰)；CC已完成候選①storyboard | 候選②(策)③(Grok)④(C)待各自獨立產出；C/Co的交付介面待妹指示 | 見輪值表 | `04_Systems/Warehouse/production_trials/2026-09-23_round3_producer_rotation.md`、`LEARNINGS.md`(治理新原則) |
+| 4 | 社群內容方向＋生產方式 | round3三棒已完成(CC/策/Grok)，等④(C) | 輪值：CC✅→策✅→Grok✅→C→Co | 3個storyboard已存檔——①CC「歌換世界」②策「Reel不肯結束（完字困住）」③Grok「開關故障」，風格明顯不同；候選④需妹先在Browser pane登入C(Claude.ai)才能交付 | 等妹登入C；之後4個一起讓妹給5選1反應 | 見輪值表 | `04_Systems/Warehouse/production_trials/2026-09-23_round3_producer_rotation.md` |
 | 5 | 四方溝通／交棒機制 | 已打通，轉觀察期 | CC2（執行）／CC（監看） | 09-22協定寫入`AI_Team_Roles.md`v1.5；但`cc2-relay-and-mailbox-watch`排程建立後12+小時未觸發過 | 觀察即可，不主動投入主力debug，除非再次明確故障 | 排程疑似未觸發（待驗證是否只是還沒到執行時機） | `06_Operations/CC_CC2_Relay.md`、`CC2_Routine_State.md` |
 | 6 | 策聊天整理／原礦回收 | 例行化 | CC | 09-23完成「0921」專案6則對話回收 | 轉為例行習慣（每次新session順手掃），不再當主線任務 | 無 | CC memory |
 | 7 | ST全資產盤點（母體重構輸入） | 進行中 | CC2 | v3已交出（IP/社群帳號/素材庫/既有商品全類別盤點），等策第三輪review | 策review v3；通過後即完成，作為#1的輸入 | 策尚未回覆 | `Multi_Restructure_Step3_ST_Asset_Inventory_20260922.md` |
