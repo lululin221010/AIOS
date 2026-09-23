@@ -14,7 +14,7 @@
 | 1 | 母體重構 | 進行中 | 策（研究）＋CC/CC2（並行，見#7） | 策完成跨產業掃描步驟2的一部分（ARG/參與式博物館類案例） | 策繼續步驟2；CC/CC2並行推進#7、#2，不替策定策略答案 | 無（研究本身不卡，只是耗時） | 策ChatGPT「0920」專案；策略框架見AIOS本文件下方無獨立檔，CC memory有完整記錄 |
 | 2 | 資產／創意倉庫 | ✅v0.1策review通過 | — | 策確認三件事成立，取捨合理，不回頭重做架構；已修正README兩處措辭 | 不繼續裝修，由#4供料使用；量大到CC讀不完entries時才升級架構 | 無 | `04_Systems/Warehouse/README.md` |
 | 3 | C049書籍企劃 | 進行中（持續生產線） | CC↔策 | Ch11查證包v1已完成（手機支付/電子票證/導航依賴十年變化） | 開/找C049專屬聊天室，交策review Ch11故事切角 | 無 | ST repo `docs/C049_*.md` |
-| 4 | 社群內容方向＋生產方式 | round2雙向盲評完成，round3計畫已定案待分工 | 待分工（Co/SG/妹） | 策×Grok雙向互評(各評對方8案)+新增「機制繼承vs機制突變」框架；round3最終定案4個候選(策#3歌換世界/策#4Reel不結束/Grok#2開關故障/Grok#8內容討債)，5-10秒storyboard即可，妹只需回答「有停一下/普通/看不懂/想看下去/第二次就膩了」 | **CC尚未取得妹指示round3由誰執行**(Co寫prompt/CC操作SG/妹自己)，需先確認分工才開始 | 執行者未定 | `04_Systems/Warehouse/production_trials/2026-09-23_round3_plan.md` |
+| 4 | 社群內容方向＋生產方式 | round3輪值制執行中，CC已交第一棒 | 輪值：CC✅→Grok→C→Co | 妹定案round3改輪值制——4個候選各由不同AI(非原構思者)寫storyboard，測不同思考角度的感觸差異；CC已完成候選①(同一句歌世界一直換)storyboard，等妹5選1反應 | 候選②③④分別排給Grok/C/Co，跟C/Co的交付介面待妹確認 | 見輪值表 | `04_Systems/Warehouse/production_trials/2026-09-23_round3_producer_rotation.md` |
 | 5 | 四方溝通／交棒機制 | 已打通，轉觀察期 | CC2（執行）／CC（監看） | 09-22協定寫入`AI_Team_Roles.md`v1.5；但`cc2-relay-and-mailbox-watch`排程建立後12+小時未觸發過 | 觀察即可，不主動投入主力debug，除非再次明確故障 | 排程疑似未觸發（待驗證是否只是還沒到執行時機） | `06_Operations/CC_CC2_Relay.md`、`CC2_Routine_State.md` |
 | 6 | 策聊天整理／原礦回收 | 例行化 | CC | 09-23完成「0921」專案6則對話回收 | 轉為例行習慣（每次新session順手掃），不再當主線任務 | 無 | CC memory |
 | 7 | ST全資產盤點（母體重構輸入） | 進行中 | CC2 | v3已交出（IP/社群帳號/素材庫/既有商品全類別盤點），等策第三輪review | 策review v3；通過後即完成，作為#1的輸入 | 策尚未回覆 | `Multi_Restructure_Step3_ST_Asset_Inventory_20260922.md` |
